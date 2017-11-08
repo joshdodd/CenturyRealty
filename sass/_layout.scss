@@ -174,7 +174,6 @@ ul#nav{
 	}
 
 }
-		
 
 /* Hompage Styles
 ================================================== */
@@ -235,7 +234,7 @@ ul#nav{
 	@include margin-offset(7); 
 	@include columns(5);
 
-	 p{padding: 20px 12px 20px 15px; margin:5px; background: rgba(255,255,255, .70); font-size:22px; line-height:28px; font-family: "minion-pro",sans-serif; font-weight:bold; font-style: italic;}	
+	 p{padding: 20px 12px 20px 15px; margin:5px; background: rgba(255,255,255, .70); font-size:22px; line-height:28px; font-family: $minion; font-weight:bold; font-style: italic;}	
 
 	@include breakpoint(smallscreen) { 
 		@include margin-offset(7, $sk-tablet-col);
@@ -247,7 +246,7 @@ ul#nav{
 		@include columns(0);  
     	left: 0; 	 
 		bottom: 5%; width: 420px;
-    	 p{padding: 10px 10px 10px 10px; margin:5px; background: rgba(255,255,255, .70); font-size:16px; line-height:20px; font-family: "minion-pro",sans-serif; font-weight:bold; font-style: italic;}	
+    	 p{padding: 10px 10px 10px 10px; margin:5px; background: rgba(255,255,255, .70); font-size:16px; line-height:20px; font-family: $minion; font-weight:bold; font-style: italic;}	
     }
 
 	@include breakpoint(portrait) {  
@@ -256,7 +255,7 @@ ul#nav{
 		@include columns(0);  
     	left: 0; 	 
 		bottom: 2%; 
-    	 p{padding: 10px 10px 10px 10px; margin:5px; background: rgba(255,255,255, .70); font-size:16px; line-height:20px; font-family: "minion-pro",sans-serif; font-weight:bold; font-style: italic;}	
+    	 p{padding: 10px 10px 10px 10px; margin:5px; background: rgba(255,255,255, .70); font-size:16px; line-height:20px; font-family: $minion; font-weight:bold; font-style: italic;}	
 	}
 
 }
@@ -338,6 +337,336 @@ ul#nav{
 
 a.more{float:right; font-weight:bold; font-style: italic;}
 
+
+
+/* Header NEW  *********************************************************************
+================================================== */
+
+#header-new {
+	background-image: url("../images/Pittsburgh.jpg");
+	background-size: cover;
+    background-position: center center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+    height: 70vh;
+    position: relative;
+    top: 0;
+	width: 100%;
+	@include breakpoint(landscape) { 
+   		height: auto;
+    }
+    @include breakpoint(portrait) { 
+    	height: auto;
+    }
+}
+
+#header-new.interior-header {
+ 
+    height: 40vh;
+ 
+}
+
+
+.logo-new{
+	padding-top: 30px;
+
+	&:hover{@include opacity(0.8); }
+
+	@include breakpoint(smallscreen) {
+ 		padding-top: 36px;
+		img {max-width:175px; }
+	}
+	
+	@include breakpoint(landscape) {
+		padding-bottom:4px;
+ 		border-bottom: 1px solid $bluegray;
+		img { padding-left:100px; }
+		&:after{content:""; 
+			width:100%; 
+			margin-top:4px; 
+			display:block;
+			border-bottom: 1px solid $bluegray; 
+		}
+	}
+	@include breakpoint(portrait) {
+		padding-bottom:4px;
+ 		border-bottom: 1px solid $bluegray;
+		img { padding-left:42px;  }
+		&:after{content:""; 
+			width:100%; 
+			margin-top:4px; 
+			display:block;
+			border-bottom: 1px solid $bluegray; 
+		}
+	}
+}
+
+.navigation-new{  
+	margin-top: 94px; 
+	padding-bottom: 3px; 
+ 
+
+	//border-bottom: 1px solid $orange;
+
+	@include breakpoint(landscape) { 
+   		margin-top: 10px; 
+		padding-bottom: 0px; 
+		margin-bottom:20px; 
+		border-bottom: transparent;
+    }
+
+	@include breakpoint(portrait) { 
+		margin-top: 10px; 
+		padding-bottom: 0px; 
+		margin-bottom:20px; 
+		border-bottom: transparent;
+	}
+}
+ 
+
+ul#nav-new{
+	height:20px;
+	margin-bottom: 8px;
+	width: 80%; 
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;	
+	justify-content: space-between;
+	 
+ 
+ 
+    @include breakpoint(smallscreen) {
+
+	}
+
+	@include breakpoint(landscape) {
+		height: auto; text-align: left;
+		margin-bottom: 0px; 
+	}
+	@include breakpoint(portrait) {
+		height: auto; text-align: left;
+		margin-bottom: 0px; 
+	}
+
+
+	li{
+		text-transform: uppercase; 
+		font-family: $oswald;
+		font-size: 20px;
+		letter-spacing: 1px;
+		margin-bottom: 3px;
+		 
+        
+ 
+		a{text-decoration: none; color: $white;}
+		a:hover{text-decoration: none; color: $orange; } 
+		 
+
+		@include breakpoint(smallscreen) {
+    	 	font-size: 11px;	
+		}
+
+		@include breakpoint(landscape) {
+			display: block; padding-top:5px;       
+		}
+		@include breakpoint(portrait) {
+			display: block; padding-top:5px;       
+		}
+
+
+	}
+	&:after{
+	content:""; 
+	width:100%; 
+	margin-top:3px; 
+	display:block;
+	border: 1px solid $orange;
+	}
+}
+
+
+ 
+
+/* Hompage NEW Styles     ************************************************
+================================================== */
+
+.home-callout{
+	padding-top: 10vh;	
+	text-align: center;
+
+	h2{
+		font-family: $minion;
+		
+		font-size: 42px;
+		line-height: 50px; 
+		color: white;
+	}
+
+}
+
+.home-form{
+
+ 
+	width: 100%;
+    margin: 0 auto;
+    padding-top: 85px;
+    position: relative;
+    padding-left: 9%;
+ 
+	//display: flex; 
+	margin: 0 auto;
+ 
+	label{display: none;}
+	.field-group{
+		display: inline;
+		float: left;
+		padding: 0 10px 0 10px;
+
+	}
+	input[type=text]{
+		font-family: $minion;
+	    padding-left: 15px;
+	    line-height: 35px;
+	    height: 35px;
+	    font-size: 14px;
+	    border-radius: 2px;
+	}
+	button.submit{
+	    height: 48px;
+	    background-color: $orange;
+	    color: white;
+	    line-height: 35px;
+	    text-align: center;
+	    font-family: "minion-pro", sans-serif;
+	    font-size: 20px;
+	    border: 1px solid $orange;
+	    border-radius: 2px;
+	    padding: 0 20px 0 20px;
+	    font-weight: bold;
+	    &:hover{
+	    	color: $orange;
+	    	cursor: pointer;
+	    	border: 1px solid $orange;
+	    	background-color: white;
+	    }
+
+	}
+
+}
+
+.border-box-new{
+	border: 2px solid $orange;
+	padding: 10px;
+}
+
+.service-callout{
+	text-align: center;
+	padding-top: 30px;
+	h3{
+		font-size: 21px; 
+		line-height: 28px;
+		font-weight: normal;
+		padding-bottom: 20px;
+	}
+
+}
+
+a.button{
+	height: 48px;
+
+	border: 1px solid $orange;
+	background-color: white;
+    color: $orange;   
+
+    line-height: 35px;
+    text-align: center;
+    font-family: "minion-pro", sans-serif;
+    font-size: 21px;
+
+ 	border-radius: 4px;
+    padding: 5px 20px 5px 20px;
+    font-weight: bold;
+
+    &:hover{
+		cursor: pointer;
+    	border: 1px solid $orange;
+    	background-color: $orange;
+    	color: white;
+    }
+}
+.home-column-new{
+	padding: 30px 0 20px 0;
+
+	h2{
+		font-family: $oswald;
+		text-transform: uppercase;
+		font-size: 24px; 
+		letter-spacing: 1px; 
+
+		a:hover{
+			color: $orange;
+		}
+	}
+	h3{
+		font-size: 19px;
+		padding: 5px 0 10px 0px;
+	}
+	p, a.more{
+		font-size: 16px;
+		line-height: 21px; 
+	}
+	&.twitter{
+		box-sizing: border-box;
+		padding-left: 10px;
+		h1{
+			display: none;
+		}		
+	}
+
+
+
+
+}
+
+.contact-block{
+	height: 250px;
+	box-sizing: border-box;
+	padding: 60px 30px;
+    background-size: cover;
+    background-position: center center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+
+    h3{
+    	font-family: $oswald;
+		text-transform: uppercase;
+		font-size: 24px; 
+		letter-spacing: 1px; 
+		color: white;
+		padding-bottom: 20px;
+    }
+    p{
+    	font-size: 16px;
+    	color: white;
+    }
+}
+
+.pittsburgh{
+	background-image: url("../images/Pittsburgh.jpg");
+}
+.wheeling{
+	background-image: url("../images/Wheeling.jpg");
+}
+
+.center{
+	text-align:center;
+}
+
+
+
+
+
+
 /* SUBHEADER Styles
 ================================================== */
  .page_title {
@@ -355,7 +684,7 @@ a.more{float:right; font-weight:bold; font-style: italic;}
 	@include margin-offset(7); 
 	@include columns(5);
 
-	 h1{padding: 20px 12px 20px 15px; margin:5px; background: rgba(255,255,255, .70);  font-family: "minion-pro",sans-serif; font-weight:bold;  text-transform: uppercase; text-align: center;}	
+	 h1{padding: 20px 12px 20px 15px; margin:5px; background: rgba(255,255,255, .70);  font-family: $minion; font-weight:bold;  text-transform: uppercase; text-align: center;}	
 
 	@include breakpoint(smallscreen) { 
 		@include margin-offset(7, $sk-tablet-col);
@@ -368,7 +697,7 @@ a.more{float:right; font-weight:bold; font-style: italic;}
 		@include columns(0);  
     	right: 0; 	 
 		bottom: 4%; 
-    	h1{padding: 10px 5px 5px 10px; margin:5px; background: rgba(255,255,255, .70); font-size:20px; line-height:20px; font-family: "minion-pro",sans-serif; font-weight:bold; font-style: italic;}	
+    	h1{padding: 10px 5px 5px 10px; margin:5px; background: rgba(255,255,255, .70); font-size:20px; line-height:20px; font-family: $minion; font-weight:bold; font-style: italic;}	
     }
 
 	@include breakpoint(portrait) { 
@@ -377,7 +706,7 @@ a.more{float:right; font-weight:bold; font-style: italic;}
 		@include columns(0);  
     	left: 0; 	 
 		bottom: 2%; 
-    	h1{padding: 8px 5px 8px 5px; margin:5px; background: rgba(255,255,255, .70); font-size:18px; line-height:20px; font-family: "minion-pro",sans-serif; font-weight:bold; font-style: italic;}	
+    	h1{padding: 8px 5px 8px 5px; margin:5px; background: rgba(255,255,255, .70); font-size:18px; line-height:20px; font-family: $minion; font-weight:bold; font-style: italic;}	
 	}
 
 }
@@ -429,7 +758,7 @@ a.more{float:right; font-weight:bold; font-style: italic;}
 	
 	p{
 		color: $navy;
-		font-family: "minion-pro",sans-serif; 
+		font-family: $minion; 
 		font-weight:bold;
 		font-style: italic;
 		padding: 25px 15px 25px 15px;

@@ -107,24 +107,83 @@
 		</div>
 	</div>
 
-	<div id="header">
+	<?php if(is_page_template('template-homepage-new.php')){ ?>
+	<div id="header-new" class="home-header">
 		<div class="container">
  
-				<div class="three columns logo">
-					 <a href="<?php bloginfo( 'url' );?>" title="Century Equities"><img src="<?php bloginfo('template_url' );?>/images/century-equities.png" title="Century Equities, Proven Real Estate Partners" alt="Century Equities, Proven Real Estate Partners"></a>
+				<div class="three columns logo-new">
+					 <a href="<?php bloginfo( 'url' );?>" title="Century Equities"><img src="<?php bloginfo('template_url' );?>/images/century-realty.png" title="Century Equities, Proven Real Estate Partners" alt="Century Equities, Proven Real Estate Partners"></a>
 				</div>
 
-				<div class="nine columns navigation">
+				<div class="nine columns navigation-new">
+				 
+					<?php wp_nav_menu( array( 'menu_id' => 'nav-new', 'theme_location' => 'primary-menu', 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>')); ?>
+					 
+				</div>
+				<div class="clear"></div>
+				<!-- HOMEPAGE Callout-->
+				<div class="container">
+					<div class="twelve columns home-callout">
+						<h2>Specializing in advising clients with honesty and integrity</h2>
 
-					<?php wp_nav_menu( array( 'menu_id' => 'nav', 'theme_location' => 'primary-menu', 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>')); ?>
+						<form class="home-form" action="#">  
+						       
+						   <div class="field-group">
+						    	<label for="text1" class="label">City</label>
+						    	<input name="text1" id="text1"  type="text"  value="" placeholder="City, State or Zip" required>
+						    	 
+						   </div>
+						   <div class="field-group">
+						    	<label for="text2" class="label">Property Type</label>
+						    	<input name="text1" id="text2"  type="text"  value="" placeholder="&#9660; Property Type" required>
+						    	 
+						   </div>
+						   <div class="field-group">
+						    	<label for="text2" class="label">Rent or Lease</label>
+						    	<input name="text1" id="text3"  type="text"  value="" placeholder="&#9660; Rent or Lease" required>
+						    	 
+						   </div>
+						   <div class="field-group">
+								<button class="submit" id="submit"  > Search Properties</button>
+						
+						   </div>
+						</form>   
+
+
+
+					</div>
+				</div>
+
+
+	 
+ 		</div>
+ 
+	</div><!-- End of Header -->
+	<?php } 
+	else { 
+	?>
+
+	<div id="header-new" class="interior-header">
+		<div class="container"> 
+ 
+				<div class="three columns logo-new">
+					 <a href="<?php bloginfo( 'url' );?>" title="Century Equities"><img src="<?php bloginfo('template_url' );?>/images/century-realty.png" title="Century Equities, Proven Real Estate Partners" alt="Century Equities, Proven Real Estate Partners"></a>
+				</div>
+
+				<div class="nine columns navigation-new">
+				 
+					<?php wp_nav_menu( array( 'menu_id' => 'nav-new', 'theme_location' => 'primary-menu', 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>')); ?>
 					<div class="clear"></div>
 				</div>
 				<div class="clear"></div>
-				<div class="contact-us">
-					<!--<a href="http://centuryequities.com/contact/">CONTACT US</a>-->
-				</div>
+	 
  		</div>
+ 
 	</div><!-- End of Header -->
+
+
+
+	<?php } ?>
 
 
 

@@ -16,13 +16,13 @@
 				{?>
 				<li>
 					<img src="<?php echo get_sub_field('image')?>" alt="" title="">
-					<!--<div class="container">
+				 	<div class="container">
 						<div class="home_quote_container">
 							 <div class="home_quote">
 								<p><?php echo get_sub_field('quote')?></p>
 							</div>
 						</div>
-					</div>-->
+					</div> 
 				</li>
  
 				<?php
@@ -49,28 +49,28 @@
 			</div>	
 		</div>
 		
-		<!-- <div class="twelve columns home_line"> </div> -->
+		  <div class="twelve columns home_line"> </div>  
 
-		<div class="twelve columns home_column">
+		<div class="four  columns home_column">
 			<!-- Comment out for now -->
-			<!--<h2> <a href="<?php echo get_field('left_box_link')?>" title="<?php echo get_field('left_box_title')?>"><?php echo get_field('left_box_title')?></a></h2> -->			<?php echo get_field('left_box_content')?>
-			<!-- <a class="more" href="<?php echo get_field('left_box_link')?>" title="<?php echo get_field('left_box_title')?>">read more ></a>-->
+			 <h2> <a href="<?php echo get_field('left_box_link')?>" title="<?php echo get_field('left_box_title')?>"><?php echo get_field('left_box_title')?></a></h2>  			<?php echo get_field('left_box_content')?>
+			 <a class="more" href="<?php echo get_field('left_box_link')?>" title="<?php echo get_field('left_box_title')?>">read more ></a> 
 		</div>
 
 		<!-- Comment out for now  __ More link should remain commmented-->
-		<!-- <div class="four columns home_column">
+		 <div class="four columns home_column">
 			
 			<h2><a href="<?php echo get_field('middle_box_link')?>" title="<?php echo get_field('middle_box_title')?>"><?php echo get_field('middle_box_title')?></a></h2>
 			<?php echo get_field('middle_box_content')?>
 			 <a class="more" href="<?php echo get_field('middle_box_link')?>" title="<?php echo get_field('middle_box_title')?>">read more ></a>
-		</div>-->
+		</div> 
 
 		<!-- Comment out for now  __ More link should remain commmented-->
-		<!-- <div class="four columns home_column">
+		 <div class="four columns home_column">
 			<h2><a href="<?php echo get_field('right_box_link')?>" title="<?php echo get_field('Right_box_title')?>"><?php echo get_field('Right_box_title')?></a></h2>
 			<?php echo get_field('Right_box_content')?>
 			<a class="more" href="<?php echo get_field('right_box_link')?>" title="<?php echo get_field('Right_box_title')?>">read more ></a>
-		</div> -->
+		</div> 
  
 				
 			
