@@ -343,7 +343,7 @@ a.more{float:right; font-weight:bold; font-style: italic;}
 ================================================== */
 
 #header-new {
-	background-image: url("../images/Pittsburgh.jpg");
+	
 	background-size: cover;
     background-position: center center;
     background-color: rgba(0, 0, 0, 0.5);
@@ -359,6 +359,15 @@ a.more{float:right; font-weight:bold; font-style: italic;}
     	height: auto;
     }
 }
+
+.header-1{
+	background-image: url("../images/Pittsburgh.jpg");
+}
+.header-2{
+	background-image: url("../images/Retail Building - iStock.jpg");
+}
+
+
 
 #header-new.interior-header {
  
@@ -503,7 +512,7 @@ ul#nav-new{
 	}
 
 }
-
+ 
 .home-form{
 
  
@@ -553,6 +562,44 @@ ul#nav-new{
 	}
 
 }
+
+
+.home-callout-2{
+	padding-top: 10vh;	
+	
+	img{
+		float: right;
+		max-width: 60% !important;
+		padding: 10px;
+		border: 2px solid $orange;
+	}
+
+}
+
+.form-2{
+	width: 100%;
+ 	
+    padding-top: 10vh;	
+    position: relative;
+    padding-left: 0;
+ 
+ 
+	label{display: none;}
+	.field-group{
+		display: block;
+		width: 100%;
+		float: left;
+		padding: 0 10px 0 10px;
+
+	}
+ 
+}
+
+
+
+
+
+
 
 .border-box-new{
 	border: 2px solid $orange;

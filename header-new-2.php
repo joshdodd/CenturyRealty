@@ -107,8 +107,8 @@
 		</div>
 	</div>
 
-	<?php if(is_page_template('template-homepage-new.php')){ ?>
-	<div id="header-new" class="home-header header-1">
+	<?php if(is_page_template('template-homepage-new-2.php')){ ?>
+	<div id="header-new" class="home-header header-2">
 		<div class="container">
  
 				<div class="three columns logo-new">
@@ -123,16 +123,12 @@
 				<div class="clear"></div>
 				<!-- HOMEPAGE Callout-->
 				<div class="container">
-					<div class="twelve columns home-callout">
-						<h2>Specializing in advising clients with honesty and integrity</h2>
-
-						<form class="home-form" action="#">  
-						       
-						   <div class="field-group">
-						    	<label for="text1" class="label">City</label>
-						    	<input name="text1" id="text1"  type="text"  value="" placeholder="City, State or Zip" required>
-						    	 
-						   </div>
+					<div class="six columns home-callout-2">
+						<img src="<?php bloginfo('template_url' );?>/images/tagline.png" alt="">
+					</div>
+					<div class="six columns  ">
+						<form class="home-form form-2" action="#">  
+						   
 						   <div class="field-group">
 						    	<label for="text2" class="label">Property Type</label>
 						    	<input name="text1" id="text2"  type="text"  value="" placeholder="&#9660; Property Type" required>
@@ -144,7 +140,7 @@
 						    	 
 						   </div>
 						   <div class="field-group">
-								<button class="submit" id="submit"  > Search Properties</button>
+								<button class="submit" id="submit"  > Search Our Properties</button>
 						
 						   </div>
 						</form>   
