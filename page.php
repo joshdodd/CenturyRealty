@@ -3,8 +3,8 @@
  */
 ?>
 
-<?php get_header(); ?>
-<?php get_template_part( 'subheader'); ?>
+<?php get_header('new'); ?>
+<?php //get_template_part( 'subheader'); ?>
 
 <div class="container page_content"> 
 	

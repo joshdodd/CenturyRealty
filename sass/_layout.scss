@@ -5,373 +5,37 @@
 
 /* Header Styles
 ================================================== */
-#header{
-	background-color: $navy;
-	height: 140px;
-	width: 100%;
-	@include breakpoint(landscape) { 
-   		height: auto;
-    }
-    @include breakpoint(portrait) { 
-    	height: auto;
-    }
-}
-
-
-.logo{
-	padding-top: 30px;
-
-	&:hover{@include opacity(0.8); }
-
-	@include breakpoint(smallscreen) {
- 		padding-top: 36px;
-		img {max-width:175px; }
-	}
-	
-	@include breakpoint(landscape) {
-		padding-bottom:4px;
- 		border-bottom: 1px solid $bluegray;
-		img { padding-left:100px; }
-		&:after{content:""; 
-			width:100%; 
-			margin-top:4px; 
-			display:block;
-			border-bottom: 1px solid $bluegray; 
-		}
-	}
-	@include breakpoint(portrait) {
-		padding-bottom:4px;
- 		border-bottom: 1px solid $bluegray;
-		img { padding-left:42px;  }
-		&:after{content:""; 
-			width:100%; 
-			margin-top:4px; 
-			display:block;
-			border-bottom: 1px solid $bluegray; 
-		}
-	}
-}
-
-.navigation{  
-	margin-top: 82px; 
-	padding-bottom: 3px; 
-	border-bottom: 1px solid $orange;
-
-	@include breakpoint(landscape) { 
-   		margin-top: 10px; 
-		padding-bottom: 0px; 
-		margin-bottom:20px; 
-		border-bottom: transparent;
-    }
-
-	@include breakpoint(portrait) { 
-		margin-top: 10px; 
-		padding-bottom: 0px; 
-		margin-bottom:20px; 
-		border-bottom: transparent;
-	}
-}
-.navigation:after{
-	content:""; 
-	width:100%; 
-	margin-top:3px; 
-	display:block;
-	border-bottom: 1px solid $orange; 
-	@include breakpoint(landscape) { 
-   		 border-bottom: none; 
-    } 
-    @include breakpoint(portrait) { 
-   		 border-bottom: none; 
-    } 
-}
-
-ul#nav{
-	height:20px;
-	margin-bottom: 8px;
-	width: 100%; 	
-	text-align: justify;
-    -ms-text-justify: distribute-all-lines;
-    text-justify: distribute-all-lines;
-
-    @include breakpoint(smallscreen) {
-
-	}
-
-	@include breakpoint(landscape) {
-		height: auto; text-align: left;
-		margin-bottom: 0px; 
-	}
-	@include breakpoint(portrait) {
-		height: auto; text-align: left;
-		margin-bottom: 0px; 
-	}
-
-
-	li{
-		text-transform: uppercase; 
-		font-weight:bold; 
-		vertical-align: top;
-    	display: inline-block;    
-    	*display: inline;   
-    	zoom: 1;
-    	margin-right:1em;
-		a{text-decoration: none; color: $orange;}
-		a:hover{text-decoration: none; color: $gray; } 
-		&:last-child{padding-right:0px;}
-
-		@include breakpoint(smallscreen) {
-    	 	font-size: 11px;	
-		}
-
-		@include breakpoint(landscape) {
-			display: block; padding-top:5px;       
-		}
-		@include breakpoint(portrait) {
-			display: block; padding-top:5px;       
-		}
-
-
-	}
-	.stretch{width: 100%; display: inline-block; font-size: 0; line-height: 0;}
-}
-
-
-@include breakpoint(landscape) 
-{
-	.menu-main-navigation-container{ }
- 	.navigation {  }	 
-}
-
-.top-bar{
-	text-align:right;
-	position:absolute;
-	right:10px;
-	z-index:500;
-}
-		
-.top-links{
-	//background:#98a6b9; 
-	margin-bottom:7px; 
-	padding:.7em .7em .5em 0;
-	
-
-	a:hover, 
-	a:active, 
-	a:focus{
-		opacity:.8;
-	}
-}
-
-@media only screen and (max-width:768px){
-	.top-bar{
-		position:relative;
-	    background-color: #0c2649;
-	    right:0px;
-
-	    .top-links{
-	    margin-bottom:0;
-		}
-	}
-
-}
-
-/* Hompage Styles
-================================================== */
  
-.slides{ margin-bottom:20px;}
-.rslides {
-  position: relative;
-  list-style: none;
-  overflow: hidden;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  margin-top: 10px;
-
-  li {
-	  -webkit-backface-visibility: hidden;
-	  position: absolute;
-	  display: none;
-	  width: 100%;
-	  left: 0;
-	  top: 0;
-	  padding-bottom:0px;
-  	  margin-bottom: 0px;
-  }
-
-  li:first-child {
-	  position: relative;
-	  display: block;
-	  float: left;
-	   }
-
-	   img {
-	  display: block;
-	  height: auto;
-	  float: left;
-	  width: 100%;
-	  border: 0;
-   }
-}
-
-.border_box{ border: 1px solid $orange;   }
-.border_inner{margin: 4px;	border: 1px solid $orange;}
-
-
-.home_quote {
-	display: block;
-	position: absolute;
-	z-index: 2;
-	font-size: 20px;
-	text-shadow: none;
-	color: $navy;
-	background: #fff;
-	background: rgba(255,255,255, .70);
-	left: 7px;
-	right: 0;
-	bottom: 10%;
-	text-indent: -1ex; 
-	@include margin-offset(7); 
-	@include columns(5);
-
-	 p{padding: 20px 12px 20px 15px; margin:5px; background: rgba(255,255,255, .70); font-size:22px; line-height:28px; font-family: $minion; font-weight:bold; font-style: italic;}	
-
-	@include breakpoint(smallscreen) { 
-		@include margin-offset(7, $sk-tablet-col);
-		@include columns(5, $sk-tablet-col);
-	}
-   
-    @include breakpoint(landscape) { 
-    	@include margin-offset(0); 
-		@include columns(0);  
-    	left: 0; 	 
-		bottom: 5%; width: 420px;
-    	 p{padding: 10px 10px 10px 10px; margin:5px; background: rgba(255,255,255, .70); font-size:16px; line-height:20px; font-family: $minion; font-weight:bold; font-style: italic;}	
-    }
-
-	@include breakpoint(portrait) {  
-    	width: 300px;
-    	@include margin-offset(0); 
-		@include columns(0);  
-    	left: 0; 	 
-		bottom: 2%; 
-    	 p{padding: 10px 10px 10px 10px; margin:5px; background: rgba(255,255,255, .70); font-size:16px; line-height:20px; font-family: $minion; font-weight:bold; font-style: italic;}	
-	}
-
-}
-
-.callout{	@include breakpoint(landscape) { 
-     	margin-top: 20px;
-    }
-
-	@include breakpoint(portrait) { 
-	 	margin-top: 20px;
-	}}
-
-
-
-.home_callout{
-	 
-	margin:4px;
-	border: 1px solid $orange;
-	text-align: center; 
-	padding: 16px 0px 16px 0px; 
-
-	@include breakpoint(smallscreen) { 
-		 height:82px;
-	}
-
-	h2{
-		font-size:28px; 
-		line-height:36px;
-		text-transform: uppercase;
-		font-weight: normal;
-		a{
-			color: $darkgray;
-			text-decoration: none;
-		}
-		a:hover{
-			color: $orange;
-			text-decoration: none;
-		}
-    }
-} 
-
-.home_line{  
-	margin-top: 30px; 
-	padding-bottom: 4px; 
-	border-bottom: 1px solid $bluegray;
-
-	&:after{
-		content:""; 
-		width:100%; 
-		margin-top:4px; 
-		display:block;
-		border-bottom: 1px solid $bluegray  
-	}
-}
-
-.home_column{
-	padding: 15px 0px 10px 0px;
-
-	h2{
-		text-transform: uppercase; 
-		font-weight: normal; 
-		border-bottom: 1px solid $bluegray;
-		padding-bottom: 4px;
-		&:after{
-			content:""; 
-			width:100%; 
-			 margin-top: 12px; 
-			display:block;
-			border-bottom: 1px solid $bluegray  
-		}
-	}
-
-	p{
-		padding-right:30px;
-		font-size:17px;
-		line-height:24px;
-	}
-}
-
-a.more{float:right; font-weight:bold; font-style: italic;}
-
-
-
-/* Header NEW  *********************************************************************
-================================================== */
 
 #header-new {
-	
+	transition: background-image 1s linear;
+	background-repeat: no-repeat;
 	background-size: cover;
     background-position: center center;
     background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: multiply;
-    height: 70vh;
+    background-blend-mode: multiply;   
     position: relative;
     top: 0;
 	width: 100%;
+
+
 	@include breakpoint(landscape) { 
    		height: auto;
     }
     @include breakpoint(portrait) { 
     	height: auto;
     }
+
 }
 
-.header-1{
-	background-image: url("../images/Pittsburgh.jpg");
+.home-header{
+	 height: 70vh;
 }
-.header-2{
-	background-image: url("../images/Retail Building - iStock.jpg");
-}
-
-
-
-#header-new.interior-header {
+ #header-new.interior-header {
  
-    height: 40vh;
+    height: 20vh;
+    min-height: 145px;
+    background-color: $navy;
  
 }
 
@@ -493,11 +157,80 @@ ul#nav-new{
 	}
 }
 
+@include breakpoint(landscape) 
+{
+	.menu-main-navigation-container{ }
+ 	.navigation {  }	 
+}
+
+.top-bar{
+	text-align:right;
+	position:absolute;
+	right:10px;
+	z-index:500;
+}
+		
+.top-links{
+	//background:#98a6b9; 
+	margin-bottom:7px; 
+	padding:.7em .7em .5em 0;
+	
+
+	a:hover, 
+	a:active, 
+	a:focus{
+		opacity:.8;
+	}
+}
+
+@media only screen and (max-width:768px){
+	.top-bar{
+		position:relative;
+	    background-color: #0c2649;
+	    right:0px;
+
+	    .top-links{
+	    margin-bottom:0;
+		}
+	}
+
+}
+
+
 
  
 
 /* Hompage NEW Styles     ************************************************
 ================================================== */
+.border_box{ border: 1px solid $orange;   }
+.border_inner{margin: 4px;	border: 1px solid $orange;}
+
+.home_callout{
+	 
+	margin:4px;
+	border: 1px solid $orange;
+	text-align: center; 
+	padding: 16px 0px 16px 0px; 
+
+	@include breakpoint(smallscreen) { 
+		 height:82px;
+	}
+
+	h2{
+		font-size:28px; 
+		line-height:36px;
+		text-transform: uppercase;
+		font-weight: normal;
+		a{
+			color: $darkgray;
+			text-decoration: none;
+		}
+		a:hover{
+			color: $orange;
+			text-decoration: none;
+		}
+    }
+} 
 
 .home-callout{
 	padding-top: 10vh;	
@@ -526,10 +259,11 @@ ul#nav-new{
 	margin: 0 auto;
  
 	label{display: none;}
+
 	.field-group{
 		display: inline;
 		float: left;
-		padding: 0 10px 0 10px;
+		margin: 0 10px 0 10px;
 
 	}
 	input[type=text]{
@@ -539,7 +273,52 @@ ul#nav-new{
 	    height: 35px;
 	    font-size: 14px;
 	    border-radius: 2px;
+	    border: none;
 	}
+
+	select {
+		font-family: $minion;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		outline: 0;
+		box-shadow: none;
+		border: 0 !important;
+		background: #fff;
+		background-image: none;
+		height: 35px;
+		font-size: 14px;
+		color: #777;
+		  cursor: pointer;
+	}
+	/* Custom Select */
+	.select {
+	  position: relative;
+	  
+	  width: 20em;
+	  line-height: 35px;
+	  height: 47px;
+	  
+	  background: #fff;
+	  overflow: hidden;
+	  border-radius: 2px;
+	}
+	select {
+	  //width: 100%;
+	  height: 100%;
+	  //margin: 0;
+	   padding: 0 0 0 .5em;
+ 
+	
+	}
+	select::-ms-expand {
+	  display: none;
+	}
+ 
+
+
+
 	button.submit{
 	    height: 48px;
 	    background-color: $orange;
@@ -563,43 +342,25 @@ ul#nav-new{
 
 }
 
+.home_line{  
+	margin-top: 30px; 
+	padding-bottom: 4px; 
+	border-bottom: 1px solid $bluegray;
 
-.home-callout-2{
-	padding-top: 10vh;	
-	
-	img{
-		float: right;
-		max-width: 60% !important;
-		padding: 10px;
-		border: 2px solid $orange;
+	&:after{
+		content:""; 
+		width:100%; 
+		margin-top:4px; 
+		display:block;
+		border-bottom: 1px solid $bluegray  
 	}
-
 }
 
-.form-2{
-	width: 100%;
- 	
-    padding-top: 10vh;	
-    position: relative;
-    padding-left: 0;
  
+
+a.more{float:right; font-weight:bold; font-style: italic;}
+
  
-	label{display: none;}
-	.field-group{
-		display: block;
-		width: 100%;
-		float: left;
-		padding: 0 10px 0 10px;
-
-	}
- 
-}
-
-
-
-
-
-
 
 .border-box-new{
 	border: 2px solid $orange;

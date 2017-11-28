@@ -6,13 +6,7 @@
 	<?php get_header('new'); ?>
 
 	<?php while ( have_posts() ) { the_post(); ?>
-
-
-
-
-
  
-
 	<div class="container home">
 
 		<div class="twelve columns home_line"> </div>  
@@ -20,8 +14,8 @@
 		<div class="ten columns offset-by-one ">
 			 
 				<div class="service-callout">
-					<h3>Century Realty specializes in advising clients in office, retail, land, industrial, and hospitality opportunities. We provide effective and ethical representation to our clients and assist throughout the decision-making process. Our unique background in acquisitions, dispositions, and development provides our clients with the tools to navigate commercial real estate transactions with confidence and surety.</h3>
-					<a href="#" class="button"> Our Services </a>
+					<h3><?php echo get_field('main_callout')?></h3>
+					<a href="<?php echo get_field('callout_link_page')?>" class="button"> <?php echo get_field('callout_link_text')?></a>
 				</div>
  
 		</div>
@@ -30,16 +24,20 @@
 
 		<div class="six columns home-column-new">
 			<!-- Comment out for now -->
-			<h2> <a href="<?php echo get_field('left_box_link')?>" title="<?php echo get_field('left_box_title')?>">Featured Property </a></h2> 
-			<img src="<?php echo bloginfo('template_url' );?>/images/property.jpg" alt="">	
-			<h3>45 20th St Wheeling, WV</h3>	
-			<p>-54,720 SF of Office Space -Former Corporate Headquarters -Four Floors Available - Minimum of 10,000 SF -Premier signage opportunity available for anchor tenant -Modern Office Layout with High Ceilings -Located Near Downtown Wheeling Amenities -Situated just 38 Miles Southwest of Southpointe/Pittsburgh along Interstate 70 -Located in the Heart of the Marcellus and Utica Gas Shale</p>
-			 	<?php//echo get_field('left_box_content')?>
-			 <a class="more" href="<?php echo get_field('left_box_link')?>" title="<?php echo get_field('left_box_title')?>">read more ></a> 
+			<h2> <a href="<?php echo get_field('featured_property_link')?>" title="<?php echo get_field('featured_property_title')?>">Featured Property </a></h2> 
+			
+			<?php $prop_image = get_field('featured_property_image');
+				  $prop_image_url = $prop_image['sizes']['large']; ?>
+			
+			<img src="<?php echo $prop_image_url;?>" alt="<?php echo $prop_image['alt']?>">	
+			
+			<h3><?php echo get_field('featured_property_title')?></h3>	
+			<p><?php echo get_field('featured_property_description')?></p>
+			 <a class="more" href="<?php echo get_field('featured_property_link')?>" title="<?php echo get_field('featured_property_title')?>">read more ></a> 
 		</div>
 
 		<div class="six columns home-column-new twitter">
-			<h2> <a href="<?php echo get_field('left_box_link')?>" title="<?php echo get_field('left_box_title')?>">Follow Us on Twitter</a></h2> 
+			<h2> <a href="https://twitter.com/Century_Realty" target="_blank" title="Twitter">Follow Us on Twitter</a></h2> 
 			<a class="twitter-timeline" data-height="620" href="https://twitter.com/Century_Realty?ref_src=twsrc%5Etfw">Tweets by Century_Realty</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			
 		</div>

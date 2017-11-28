@@ -2,14 +2,10 @@
  * Template Name: Landing Page Template
  */
 ?>
+ 
 
-<?php /*
- * Default Page Template
- */
-?>
-
-<?php get_header(); ?>
-<?php get_template_part( 'subheader'); ?>
+<?php get_header('new'); ?>
+<?php //get_template_part( 'subheader'); ?>
 
 <div class="container page_content"> 
 	

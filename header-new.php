@@ -3,8 +3,6 @@
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-<head>
-
  
 <head>
 	<meta charset="utf-8">
@@ -72,12 +70,17 @@
 	<meta name="theme-color" content="#ffffff"> -->
 
 	<?php wp_head(); ?>
-	<style type="text/css">
-	/*.contact-us{position: absolute; top: 10px; right: 10px;} .contact-us a:hover{color: white;}
-	.top-bar{text-align:right;}
-		.top-links{background:#98a6b9; margin-bottom:7px; padding:.7em .7em .5em 0;}
-		.top-links a:hover, .top-links a:active, .top-links a:focus{opacity:.8;}*/
-	</style>
+ 
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110253506-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-110253506-1');
+</script>
 
 </head>
 
@@ -107,8 +110,29 @@
 		</div>
 	</div>
 
-	<?php if(is_page_template('template-homepage-new.php')){ ?>
-	<div id="header-new" class="home-header header-1">
+	<?php if(is_page_template('template-homepage-new.php')){ 
+
+		if(get_field('rotating_images')){ 
+
+			$image_array = array();
+
+			while( have_rows('rotating_images') ): the_row(); 
+				$image = get_sub_field('image');
+
+				$image_url = $image['sizes']['home-bg'];
+				$image_url = '"' .$image_url . '"';
+
+				array_push($image_array,$image_url);
+			endwhile; 
+	 
+
+		}
+
+
+		?>
+	<div id="header-new" class="home-header" data-slides='[<?php echo implode(",", $image_array); ?>]'>
+
+
 		<div class="container">
  
 				<div class="three columns logo-new">
@@ -121,26 +145,49 @@
 					 
 				</div>
 				<div class="clear"></div>
+
+
 				<!-- HOMEPAGE Callout-->
 				<div class="container">
 					<div class="twelve columns home-callout">
-						<h2>Specializing in advising clients with honesty and integrity</h2>
+						<!-- <h2>Specializing in advising clients with honesty and integrity</h2> -->
 
-						<form class="home-form" action="#">  
+						<form class="home-form" action="/properties">  
 						       
 						   <div class="field-group">
-						    	<label for="text1" class="label">City</label>
-						    	<input name="text1" id="text1"  type="text"  value="" placeholder="City, State or Zip" required>
+						    	<label for="city" class="label">City</label>
+						    	<input name="city" id="city"  type="text"  value="" placeholder="City, State or Zip" >
 						    	 
 						   </div>
-						   <div class="field-group">
-						    	<label for="text2" class="label">Property Type</label>
-						    	<input name="text1" id="text2"  type="text"  value="" placeholder="&#9660; Property Type" required>
+						   <div class="field-group select">
+						    	<label for="property_type" class="label">Property Type</label>
+						    	 
+						    	<select name="property_type" id="property_type">
+						    		<option value=" ">&#9660; Select Property Type</option>
+									<option value="10">Agricultural</option>
+									<option value="30">Health Care</option>
+									<option value="40">Industrial</option>
+									<option value="50">Land</option>
+									<option value="60">Hotel &amp; Motel</option>
+									<option value="70">Multifamily</option>
+									<option value="80">Office</option>
+									<option value="90">Retail</option>
+									<option value="100">Senior Housing</option>
+									<option value="120">Special Purpose</option>
+									<option value="130">Sport &amp; Entertainment</option>
+									<option value="140">Residential Income</option>
+								</select>
 						    	 
 						   </div>
-						   <div class="field-group">
-						    	<label for="text2" class="label">Rent or Lease</label>
-						    	<input name="text1" id="text3"  type="text"  value="" placeholder="&#9660; Rent or Lease" required>
+						   <div class="field-group select">
+						    	<label for="sale_lease" class="label">Sale or Lease</label>
+						    	 
+						    	<select name="sale_lease" id="sale_lease">
+						    		<option value="FSFL">&#9660; For Sale or Lease</option>
+									<option value="FS">For Sale</option>
+									<option value="FL">For Lease</option>
+				 
+								</select>
 						    	 
 						   </div>
 						   <div class="field-group">
@@ -161,9 +208,16 @@
 	</div><!-- End of Header -->
 	<?php } 
 	else { 
+	
+	
+		if(get_field('top_image')){ 
+			$top_img = get_field('top_image');
+			$top_img_url = $top_img['sizes']['home-bg'];
+		}
+
 	?>
 
-	<div id="header-new" class="interior-header">
+	<div id="header-new" class="interior-header" <?php if(get_field('top_image')){  ?> style="background-image:url('<?php echo $top_img_url; ?>'); background-color: rgba(12, 38, 73, 0.5);" <?php }?>>
 		<div class="container"> 
  
 				<div class="three columns logo-new">

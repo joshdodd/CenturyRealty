@@ -129,12 +129,21 @@
  
 
  		 jQuery(document).ready(function($) {
-// 			$(".rslides").responsiveSlides({
-//   auto: true,             // Boolean: Animate automatically, true or false
-//   speed: 1000,            // Integer: Speed of the transition, in milliseconds
-//   timeout: 4800,          // Integer: Time between slide transitions, in milliseconds
-  
-// });
+ 		 	'use strict';
+	
+			var $slides = $('[data-slides]');
+			var images = $slides.data('slides');
+			var count = images.length;
+			var slideshow = function() {
+				$slides
+					.css('background-image', 'url("' + images[Math.floor(Math.random() * count)] + '")')
+					.show(0, function() {
+						setTimeout(slideshow, 5000);
+					});
+			};
+			
+			slideshow();
+ 			
  		});
 	</script>
 </body>

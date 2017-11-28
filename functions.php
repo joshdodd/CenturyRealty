@@ -37,6 +37,7 @@ add_image_size('medium', 250, '', true); // Medium Thumbnail
 add_image_size('small', 120, '', true); // Small Thumbnail
 add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 add_image_size('background-fullscreen', 1800, 1200, true);
+add_image_size('home-bg', 1800, 700, true);
 
 // Register Widget Area for the Sidebar
 register_sidebar( array(
@@ -49,21 +50,7 @@ register_sidebar( array(
 	'after_title' => '</h1>',
 ) );
 
-// Load Optimised Google Analytics in the footer
-// Change the UA-XXXXXXXX-X to your Account ID
-function add_google_analytics()
-{
-    $google = "<!-- Google Analytics -->";
-    $google .= "<script>";
-    $google .= "var _gaq=[['_setAccount','UA-XXXXXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));";
-    $google .= "</script>";
-    echo $google;
-}
-
-add_action('wp_footer', 'add_google_analytics'); // Google Analytics optimised in footer
+ 
 
 
 /*** CLEAN UP FUNCTIONS ----------------------------------------*/

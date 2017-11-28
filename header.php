@@ -3,8 +3,6 @@
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-<head>
-
  
 <head>
 	<meta charset="utf-8">
@@ -79,6 +77,16 @@
 		.top-links a:hover, .top-links a:active, .top-links a:focus{opacity:.8;}*/
 	</style>
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110253506-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-110253506-1');
+</script>
+
 </head>
 
 <?php 
@@ -108,6 +116,7 @@
 	</div>
 
 	<div id="header">
+
 		<div class="container">
  
 				<div class="three columns logo">
@@ -124,6 +133,7 @@
 					<!--<a href="http://centuryequities.com/contact/">CONTACT US</a>-->
 				</div>
  		</div>
+ 		
 	</div><!-- End of Header -->
 
 
