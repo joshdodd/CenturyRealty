@@ -132,11 +132,17 @@ ul#nav-new{
 		font-size: 20px;
 		letter-spacing: 1px;
 		margin-bottom: 3px;
+
+
 		 
         
  
 		a{text-decoration: none; color: $white;}
 		a:hover{text-decoration: none; color: $orange; } 
+
+		&.current-menu-item a{
+			color: $orange; 
+		}
 		 
 
 		@include breakpoint(smallscreen) {
