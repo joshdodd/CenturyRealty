@@ -140,7 +140,7 @@ ul#nav-new{
 		a{text-decoration: none; color: $white;}
 		a:hover{text-decoration: none; color: $orange; } 
 
-		&.current-menu-item a{
+		&.current-menu-item a, &.current-page-ancestor a{
 			color: $orange; 
 		}
 		 
@@ -258,9 +258,7 @@ ul#nav-new{
 }
  
 .home-form{
-
  
-	width: 100%;
     margin: 0 auto;
     padding-top: 85px;
     position: relative;
@@ -268,13 +266,55 @@ ul#nav-new{
  
 	//display: flex; 
 	margin: 0 auto;
+
+	@include breakpoint(smallscreen) {
+		padding-left: 0%;
+		padding-top: 25px;
+		width: 350px;
+		margin: 0;
+
+	}
+
+	@include breakpoint(landscape) {
+		padding-left: 0%;
+		padding-top: 0px;
+		margin: 0;
+		margin-top: -20px;
+		width: 350px;
+		
+
+		 
+	}
+	@include breakpoint(portrait) {
+		padding-left: 0%;
+		padding-top: 0px;
+		margin: 0;
+		margin-top: -20px;
+		width: 350px;
+		
+	}
+
+
  
 	label{display: none;}
 
 	.field-group{
 		display: inline;
 		float: left;
-		margin: 0 10px 0 10px;
+		margin: 0 10px 10px 10px;
+
+		@include breakpoint(smallscreen) {
+			display: block;
+			float: left;
+		}
+		@include breakpoint(portrait) {
+			display: block;
+			float: left;
+		}
+		@include breakpoint(landscape) {
+			display: block;
+			float: left;
+		}
 
 	}
 	input[type=text]{
@@ -285,9 +325,13 @@ ul#nav-new{
 	    font-size: 14px;
 	    border-radius: 2px;
 	    border: none;
+	    width: 210px;
+	    margin-bottom: 0;
 	}
 
 	select {
+		width: 230px;
+		//margin-bottom: 20px;
 		font-family: $minion;
 		-webkit-appearance: none;
 		-moz-appearance: none;
@@ -307,7 +351,7 @@ ul#nav-new{
 	.select {
 	  position: relative;
 	  
-	  width: 20em;
+	  //width: 20em;
 	  line-height: 35px;
 	  height: 47px;
 	  
