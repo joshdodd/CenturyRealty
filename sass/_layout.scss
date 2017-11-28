@@ -12,7 +12,7 @@
 	background-repeat: no-repeat;
 	background-size: cover;
     background-position: center center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(12, 38, 73, 0.5);
     background-blend-mode: multiply;   
     position: relative;
     top: 0;
@@ -36,6 +36,14 @@
     height: 20vh;
     min-height: 145px;
     background-color: $navy;
+
+	@include breakpoint(landscape) { 
+   		height: auto;
+    }
+    @include breakpoint(portrait) { 
+    	height: auto;
+    }
+
  
 }
 
@@ -52,25 +60,15 @@
 	
 	@include breakpoint(landscape) {
 		padding-bottom:4px;
- 		border-bottom: 1px solid $bluegray;
-		img { padding-left:100px; }
-		&:after{content:""; 
-			width:100%; 
-			margin-top:4px; 
-			display:block;
-			border-bottom: 1px solid $bluegray; 
-		}
+ 		 
+		img { padding-left:0px; }
+	 
 	}
 	@include breakpoint(portrait) {
 		padding-bottom:4px;
- 		border-bottom: 1px solid $bluegray;
+ 		 
 		img { padding-left:42px;  }
-		&:after{content:""; 
-			width:100%; 
-			margin-top:4px; 
-			display:block;
-			border-bottom: 1px solid $bluegray; 
-		}
+	 
 	}
 }
 
@@ -109,16 +107,22 @@ ul#nav-new{
  
  
     @include breakpoint(smallscreen) {
-
+		width: 95%; 
+		margin-top: -7px;
 	}
 
 	@include breakpoint(landscape) {
-		height: auto; text-align: left;
+		height: auto; 
+		text-align: left;
 		margin-bottom: 0px; 
+		width: 100%; 
+		display: block;
 	}
 	@include breakpoint(portrait) {
 		height: auto; text-align: left;
 		margin-bottom: 0px; 
+		width: 100%; 
+		display: block;
 	}
 
 
@@ -136,14 +140,15 @@ ul#nav-new{
 		 
 
 		@include breakpoint(smallscreen) {
-    	 	font-size: 11px;	
+    	 	font-size: 16px;
+
 		}
 
 		@include breakpoint(landscape) {
-			display: block; padding-top:5px;       
+			display: block; padding-top:12px;       
 		}
 		@include breakpoint(portrait) {
-			display: block; padding-top:5px;       
+			display: block; padding-top:12px;       
 		}
 
 
